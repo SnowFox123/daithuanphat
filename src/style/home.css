@@ -1,0 +1,147 @@
+.container-home-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0 50px;
+    padding: 0 30px;
+}
+
+.card {
+    width: 200px;
+    margin: 27px;
+    height: 280px; /* Fixed height for all cards */
+    overflow: hidden; /* Ensure that any content exceeding the card's dimensions is hidden */
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2rem 3rem rgba(132, 139, 200, 0.25);
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.card_image {
+    display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    max-height: 600px;
+}
+
+.card button {
+    background-color: #4caf58;
+    color: #fff;
+    border: none;
+    padding: 5px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.title_film {
+    font-size: 20px;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Display ellipsis (...) to indicate truncated text */
+}
+
+
+
+.card h3 {
+    margin-bottom: 5px;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    /* max-height: 400px; */
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.popup img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.popup h2 {
+    margin-bottom: 5px;
+}
+
+.popup p {
+    margin-bottom: 10px;
+}
+
+.popup .close {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 37px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.popup .close:hover {
+    color: #777;
+}
+
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+    background-color: #000 !important;
+}
+
+
+.button-view-detail {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #4CAF50;
+    color: #4CAF50;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.button-view-detail:hover {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.logo-css {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+

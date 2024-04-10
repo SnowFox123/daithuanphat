@@ -1,0 +1,616 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 18, 2024, 3:44:04 PM
+    Author     : tranl
+*/
+
+
+.navbar {
+    background-color: black;
+}
+
+.navbar-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Inter;
+}
+
+.navbar-item img{
+    max-height: 45px;
+    max-width: 85%;
+}
+
+.navbar-start .navbar-item button{
+    color: #fff;
+    background-color: #000;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Inter;
+    font-size: 16px;
+}
+
+.navbar-start .navbar-item button:hover{
+    color: #D9AB73;
+    background-color: #000;
+}
+
+.navbar-start a{
+    color: #fff;
+}
+
+.navbar-start button{
+    /*    color: #fff;
+        background-color: #000;*/
+}
+
+a.navbar-item:hover{
+    color: #D9AB73;
+    background-color: #000;
+}
+
+.navbar-end .navbar-item .buttons button{
+    color: #D9AB73;
+    background-color: #000;
+    margin-right: 0px;
+    font-family: Inter;
+}
+
+.navbar-end .navbar-item .buttons button:hover{
+    color: #fff;
+}
+
+.navbar-container-1 {
+    padding: 0 5px;
+}
+
+.navbar-container-1  button{
+    /*padding: 0 5px;*/
+    background-color: #000;
+}
+
+.navbar-container-1  navbar-1{
+    padding: 5px 14px;
+    color: #D9AB73;
+    font-size: 18px;
+    font-family: Inter;
+    font-weight: 700;
+    word-wrap: break-word;
+    border-radius: 30px; border: 3px #D9AB73 solid
+}
+
+.navbar-container-1  button:hover {
+    color: #fff;
+}
+
+.navbar-container-1 a:hover {
+    color: #fff;
+}
+
+.navbar-1{
+    padding: 5px 14px;
+    color: #D9AB73;
+    font-size: 18px;
+    font-family: Inter;
+    font-weight: 700;
+    word-wrap: break-word;
+    border-radius: 30px; border: 3px #D9AB73 solid
+}
+
+.navbar-1-list {
+    padding: 5px 14px;
+    color: #D9AB73;
+    font-size: 18px;
+    font-family: Inter;
+    font-weight: 700;
+    word-wrap: break-word;
+    border: 30px; border: 3px #D9AB73 solid;
+}
+
+.navbar-end .hover-down {
+    background-color: #000;
+    padding: 0 5px
+}
+
+.navbar-end .navbar-item .navbar-link:hover {
+    background-color: #fff;
+    color: #D9AB73;
+}
+
+.field {
+    padding: 8px 0 0 0;
+}
+
+.search-bar {
+    width: 80%;
+    border: 3px solid #D9AB73;
+    background: #FDF7FB;
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+    border-color: #000;
+}
+
+.select:not(.is-multiple):not(.is-loading):hover::after {
+    border-color: #D9AB73;
+}
+
+.field .button-search  {
+    background: #000;
+    width: 100%;
+    color: #D9AB73;
+    text-align: center;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.field .button-search:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.button-search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    background: #000;
+    margin-left: 10px;
+    border: 2px solid #FFF;
+
+}
+
+.button-search-container:hover {
+    border: 2px solid #D9AB73;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.search-wrap {
+    width: 972px;
+    height: 115px;
+    flex-shrink: 0;
+    background-color: #000;
+    border: 2px solid #D9AB73;
+    border-radius: 15px ;
+    /*border-color: #D9AB73;*/
+}
+
+.search-detail-container {
+    display: flex;
+    justify-content: center;
+}
+
+.search-container .field {
+    display: flex;
+    justify-content: center;
+}
+
+.search-detail-container .control .select:after {
+    /*    content: '\25BC';  Unicode character for down arrow 
+                font-size: 16px;
+                color: #ff6600;  Change this to the desired arrow color 
+                position: absolute;
+                top: 50%;
+                right: 5px;
+                transform: translateY(-50%);*/
+}
+
+
+.realestate-quantity {
+    width: 230px;
+    height: 40px;
+    flex-shrink: 0;
+    color: #D9AB73;
+    text-align: right;
+    font-family: Inter;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    position: inherit;
+    width: 1440px;
+    flex-shrink: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    padding: 15px 0 0 0
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 12px;
+    max-height: 90px;
+}
+
+.footer_content1 {
+    color: #D9AB73;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+}
+
+.footer-left-content {
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.footer-mid-content {
+    width: 424px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.footer-right-content {
+    width: 200px;
+    height: 65px;
+    flex-shrink: 0;
+    max-height: 50%;
+    object-fit: unset;
+    border-radius: unset;
+    background: lightgray 50% / cover no-repeat;
+}
+
+.buttons .button:not(:last-child):not(.is-fullwidth) {
+    margin-right: 0px;
+}
+
+.buttons button {
+    padding: 8px 10px;
+}
+
+
+/* login */
+.navbar-item .navbar-dropdown {
+    right:0;
+    left: initial
+}
+
+button {
+    background: initial;
+    border: initial;
+    color: initial;
+    cursor: pointer;
+}
+
+.navbar-dropdown .navbar-item:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.navbar-dropdown .navbar-item button:hover {
+    background-color: #000; 
+    color: #fff;
+}
+
+@media screen and (min-width: 1024px){
+    .navbar-dropdown a.navbar-item {
+        padding-right: 16px !important;
+        color: #fff;
+    }
+}
+
+.navbar-dropdown {
+    background-color: #000;
+    border: 2px solid #D9AB73;
+    margin-top: 5px;
+}
+
+.fake-div {
+    height: 10px;
+    width: 10px;
+    background-color: transparent;
+    font-size: .875rem;
+    left: 0;
+    min-width: 100%;
+    position: absolute;
+    top: 100%;
+    z-index: 20;
+}
+
+.navbar-dropdown .navbar-item span {
+    color: #fff;
+}
+
+.navbar-dropdown .navbar-item span:hover {
+    color: #D9AB73 !important;  
+}
+
+.navbar-item .navbar-link:focus {
+    background-color: #000;
+    color: #D9AB73;
+}
+
+.navbar-dropdown a.navbar-item:hover {
+    background-color: initial; 
+    color: #D9AB73 !important;  
+}
+
+.navbar-dropdown a.navbar-item:focus {
+    background-color: #000 !important;
+}
+
+.navbar-link:not(.is-arrowless)::after {
+    border-color: #D9AB73;; /* Default border color */
+}
+
+/* Styles when .navbar-link is focused */
+.navbar-item .navbar-link:focus {
+    background-color: #000;
+    color: #fff;
+}
+
+
+.navbar-divider  {
+    background-color: #323232;
+}
+
+.navbar-link:not(.is-arrowless) {
+    padding-right: 2.5em;
+    max-height: 36px;
+}
+
+
+
+/*                                                           login                                                      */
+.background-login {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    max-height: calc(100vh - 125px);
+    min-height:  calc(100vh - 125px);
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    position: fixed;
+    top: 13%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*background-color: rgba(0, 0, 0, 0.3);*/
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-modal-container {
+    position: relative;
+    width: 435px;
+    margin: auto;
+    border-radius: 57px;
+    border: 3px solid #D9AB73;
+    background: rgba(0, 0, 0, 0.70);
+    flex-shrink: 0;
+    min-height: 200px;
+    max-width: calc(100% - 32px);
+    animation: modalFadeIn ease 0.5s;
+
+}
+
+.login-modal-container header .navbar-item:hover {
+    color: #D9AB73;
+    background-color: initial;
+}
+
+.header-login {
+    text-align: center;
+    color: #D9AB73;
+    font-family: Inter;
+}
+.header-login a {
+    display: inline-block;
+}
+.header-login img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.register-if-dont-have-container {
+    display: flex;
+}
+
+.container login {
+    text-align: center; /* Căn giữa nội dung trong container */
+}
+
+.register-if-dont-have-container,
+.register-here {
+    display: inline-block;
+}
+
+.registration-form {
+    display: inline-block;
+}
+
+.submit-login-btn:hover {
+    color: #fff !important;
+    /*border-color: rgba(0, 0, 0, 0.70) !important;*/
+}
+
+.sign-up-in-login {
+    padding: 0;
+    height: unset;
+    background-color: transparent !important;
+    color: #fff !important;
+    line-height: 20px;
+}
+
+.sign-up-in-login:hover {
+    text-decoration: underline;
+}
+
+.input-username {
+    width: 70%;
+    background-color: transparent;
+    color: #fff;
+    border-bottom: #D9AB73 3px solid;
+    margin-top: 16px;
+}
+
+.form-login-container {
+
+}
+
+.input-username::placeholder {
+    color: #fff;
+}
+
+.input-username:focus,
+.input-username:hover,
+.input-username:active{
+    border-color: #000;
+    border-bottom: #D9AB73 3px solid;
+    box-shadow: initial;
+}
+
+.input-password {
+    width: 70%;
+    color: #fff;
+    background-color: transparent;
+    border-bottom: #D9AB73 3px solid;
+    margin-top: 16px;
+}
+
+.input-password:focus,
+.input-password:hover,
+.input-password:active{
+    border-color: #000;
+    border-bottom: #D9AB73 3px solid;
+    box-shadow: initial;
+}
+
+.input-password::placeholder {
+    color: #fff;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.forgot-password {
+    display: block;
+    left: 15%;
+    padding: 5px 0 0 0;
+    height: unset;
+    background-color: transparent !important;
+    color: #fff !important;
+    line-height: 20px;
+}
+
+.submit-with-gg-btn {
+    color: #fff !important;
+}
+
+.submit-with-gg-btn:hover {
+    color: #333 !important;
+}
+
+.usernamepassnull {
+    color: red;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+/*.img-logo-login {
+    max-width: 50px;
+}*/
+
+
+.column-home-real {
+    padding: 2.75em;
+    text-align: center;
+}
+
+.text-home-container {
+    background-color: #000;
+    color: #D9AB73
+}
+
+.text-home-1 {
+    color: white;
+    font-size: 22px;
+    font-family: Inter;
+    font-weight: 800;
+    word-wrap: break-word
+}
+
+.text-home-2 {
+    color: white;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 800;
+    word-wrap: break-word
+}
+
+.text-home-3 {
+    color: #D9AB73;
+    font-size: 22px;
+    font-family: Inter;
+    font-weight: 800;
+    word-wrap: break-word
+}
+
+.button-detail:hover {
+    color: #1b0ad5 !important;
+    border-color: #1e1d1d !important;
+}
+
+.title {
+    color: #fffbfb;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.125;
+}
+
+.css-1y942vo-MuiButtonBase-root-MuiButton-root:hover {
+    color: rgb(217, 171, 115) !important;
+}
+
+.img-logo {
+    width: 100px;
+    border-radius: unset;
+}
+
+.css-1q39md6-MuiButtonBase-root-MuiButton-root:hover {
+    color: rgb(217, 171, 115) !important;
+}
