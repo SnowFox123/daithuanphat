@@ -35,9 +35,9 @@ button {
     font-size: 14px;
 }
 
-button:hover {
+/* button:hover {
     background-color: rgb(217, 171, 115);
-}
+} */
 
 .delete-button:hover {
     background-color: rgb(217, 171, 115) !important;

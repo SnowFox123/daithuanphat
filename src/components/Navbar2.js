@@ -12,12 +12,28 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+
+import "../style/navbar.css"
+
 import { Link } from 'react-router-dom';
 
 const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function NavBar2() {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    function handleClick(event) {
+        if (anchorEl !== event.currentTarget) {
+            setAnchorEl(event.currentTarget);
+        }
+    }
+
+    function handleClose() {
+        setAnchorEl(null);
+    }
+
+
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -40,7 +56,7 @@ function NavBar2() {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <img className='logo-css' style={{marginRight:'15px'}} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPBgQmuTEbZF3eHkPG2h7_If4pGxXaILJlmg&usqp=CAU'></img>
+                    <img className='logo-css' style={{ marginRight: '15px' }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPBgQmuTEbZF3eHkPG2h7_If4pGxXaILJlmg&usqp=CAU'></img>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -97,15 +113,28 @@ function NavBar2() {
                     >
                         LOGO
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        <Button color="inherit" component={Link} to="/">Home</Button>
+                    <Box style={{textAlign: 'center', display: 'flex', justifyContent: 'center'}} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                        <Button color="inherit" component={Link} to="/">Về chúng tôi</Button>
+
+                        <Button color="inherit" component={Link} to="/">Trang chủ</Button>
+
+                        <div class="dropdown">
+                            <Button class="dropbtn">SẢN PHẨM & THIẾT BỊ</Button>
+                            <div class="dropdown-content">
+                                <Button color="inherit" component={Link} to="/dashboard">In Vải chống thấm (áo Jacket, quần áo bơi,...)</Button>
+
+                                <Button color="inherit" component={Link} to="/contact">Liên hệ</Button>
+                            </div>
+                        </div>
+
+                        <Button color="inherit" component={Link} to="/">Tin tức & Sự kiện</Button>
 
                         <Button color="inherit" component={Link} to="/dashboard">Dashboard</Button>
 
-                        <Button color="inherit" component={Link} to="/contact">Contact</Button>
+                        <Button color="inherit" component={Link} to="/contact">Liên hệ</Button>
                     </Box>
 
-                    <Box sx={{ flexGrow: 0 }}>
+                    {/* <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -133,7 +162,7 @@ function NavBar2() {
                                 </MenuItem>
                             ))}
                         </Menu>
-                    </Box>
+                    </Box> */}
                 </Toolbar>
             </Container>
         </AppBar>

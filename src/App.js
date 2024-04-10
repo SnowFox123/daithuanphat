@@ -9,7 +9,7 @@ import NavBar2 from "./components/Navbar2";
 import About from "./pages/About";
 import Detail from "./components/Detail";
 
-import './style.css'
+import './style/style.css'
 
 function App() {
   return (

@@ -602,8 +602,14 @@ button {
     line-height: 1.125;
 }
 
-.css-1y942vo-MuiButtonBase-root-MuiButton-root:hover {
-    color: rgb(217, 171, 115) !important;
+.css-1y942vo-MuiButtonBase-root-MuiButton-root {
+    color:  #3e3e65 !important;
+    background-color: unset !important;
+    font-weight: 700 !important;
+}
+
+button {
+    font-weight: bold;
 }
 
 .img-logo {
@@ -611,6 +617,9 @@ button {
     border-radius: unset;
 }
 
-.css-1q39md6-MuiButtonBase-root-MuiButton-root:hover {
-    color: rgb(217, 171, 115) !important;
+.css-1y942vo-MuiButtonBase-root-MuiButton-root:hover {
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.04);
+    color: #10aad6 !important;
 }

@@ -5,22 +5,22 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../style/dashboard.css';
 
-const URL = 'https://65ea1a08c9bf92ae3d3b159b.mockapi.io/toys';
+const URL = 'https://65e177e3a8583365b3166e81.mockapi.io/daithuanphat';
 
 export default function Dashboard() {
 
-    const [toys, setToys] = useState([]);
+    const [products, setProducts] = useState([]);
 
 
-    const getListToys = async () => {
+    const getListProducts = async () => {
         const res = await axios.get(`${URL}`);
         if (res.status === 200) {
-            setToys(res.data);
+            setProducts(res.data);
         }
     };
 
     useEffect(() => {
-        getListToys();
+        getListProducts();
     }, []);
 
 
@@ -28,7 +28,7 @@ export default function Dashboard() {
         if (window.confirm(`Are you sure that you want to delete a toy with ID: ${id}`)) {
             const res = await axios.delete(`${URL}/${id}`);
             if (res.status === 200) {
-                getListToys();
+                getListProducts();
                 alert("Deleted Successfully")
                 // toast.success("Deleted Successfully");
             } else {
@@ -51,17 +51,17 @@ export default function Dashboard() {
                     <tr>
                         <th>ID</th>
 
-                        <th>Name</th>
+                        <th>BrandName</th>
 
                         <th>Image</th>
 
-                        <th>Description</th>
+                        <th>BrandDescription</th>
 
-                        <th>Rating</th>
+                        {/* <th>Rating</th>
 
                         <th>Category</th>
-                        <th>Price</th>
-                        <th>Bestseller</th>
+                        <th>Price</th> */}
+                        <th>Status</th>
 
 
                         {/* <th>Create Date</th> */}
@@ -70,29 +70,29 @@ export default function Dashboard() {
                     </tr>
                 </thead>
                 <tbody>
-                    {toys && toys.map((toy) => (
-                        <tr key={toy.id}>
-                            <td>{toy.id}</td>
+                    {products && products.map((product) => (
+                        <tr key={product.id}>
+                            <td>{product.id}</td>
 
-                            <td>{toy.name}</td>
+                            <td>{product.brandName}</td>
 
-                            <td><img src={toy.image} alt={toy.id} /></td>
+                            <td><img src={product.image} alt={product.id} /></td>
 
-                            <td>{toy.description}</td>
+                            <td>{product.brandDescription}</td>
 
-                            <td>{toy.rating}</td>
+                            {/* <td>{product.rating}</td> */}
+{/* 
+                            <td>{product.category}</td>
+                            <td>{product.price}</td> */}
+                            <td>{product.status ? 'true' : 'false'}</td>
 
-                            <td>{toy.category}</td>
-                            <td>{toy.price}</td>
-                            <td>{toy.bestseller ? 'true' : 'false'}</td>
 
-
-                            {/* <td>{toy.info}</td> */}
+                            {/* <td>{product.info}</td> */}
 
                             <td>
-                                <Link to={`/update/${toy.id}`}><button>Edit</button></Link>
+                                <Link to={`/update/${product.id}`}><button>Edit</button></Link>
 
-                                <button className="delete-button" style={{ backgroundColor: 'red' }} onClick={() => handleDelete(toy.id)}>Delete</button>
+                                <button className="delete-button" style={{ backgroundColor: 'red' }} onClick={() => handleDelete(product.id)}>Delete</button>
                             </td>
                         </tr>
                     ))}
