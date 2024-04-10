@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/daithuanphat/static/css/main.41fbea54.css",
-    "main.js": "/daithuanphat/static/js/main.3492d7b9.js",
+    "main.css": "/daithuanphat/static/css/main.32d56c5f.css",
+    "main.js": "/daithuanphat/static/js/main.48cf20cc.js",
     "static/js/453.2244a7b9.chunk.js": "/daithuanphat/static/js/453.2244a7b9.chunk.js",
     "index.html": "/daithuanphat/index.html",
-    "main.41fbea54.css.map": "/daithuanphat/static/css/main.41fbea54.css.map",
-    "main.3492d7b9.js.map": "/daithuanphat/static/js/main.3492d7b9.js.map",
+    "main.32d56c5f.css.map": "/daithuanphat/static/css/main.32d56c5f.css.map",
+    "main.48cf20cc.js.map": "/daithuanphat/static/js/main.48cf20cc.js.map",
     "453.2244a7b9.chunk.js.map": "/daithuanphat/static/js/453.2244a7b9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.41fbea54.css",
-    "static/js/main.3492d7b9.js"
+    "static/css/main.32d56c5f.css",
+    "static/js/main.48cf20cc.js"
   ]
 }
