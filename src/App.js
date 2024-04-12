@@ -8,21 +8,30 @@ import FormAddEdit from "./components/FormAddEdit";
 import NavBar2 from "./components/Navbar2";
 import About from "./pages/About";
 import Detail from "./components/Detail";
+import Slideshow from "./components/Slideshow";
 
-import './style/style.css'
+import './style/style.css';
 
 function App() {
   return (
     <BrowserRouter>
-    <NavBar2 />
+      <NavBar2 />
       <Routes>
-        <Route path="/" element={<Home/>}></Route>
-        <Route path="/dashboard" element={<Dashboard/>}></Route>
-        <Route path="/add" element={<FormAddEdit />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/update/:id" element={<FormAddEdit />}></Route>
-        <Route path="/contact" element={<Contact/>}></Route>
-        <Route path="/detail/:id" element={<Detail />} /> {/* Sử dụng Route component để truyền match props */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Slideshow />
+              {/* <Home /> */}
+            </>
+          }
+        />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/add" element={<FormAddEdit />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/update/:id" element={<FormAddEdit />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/detail/:id" element={<Detail />} />
       </Routes>
       <Footer />
     </BrowserRouter>
@@ -30,6 +39,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 // npx create-react-app

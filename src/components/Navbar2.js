@@ -114,7 +114,7 @@ function NavBar2() {
                         LOGO
                     </Typography>
                     <Box style={{textAlign: 'center', display: 'flex', justifyContent: 'center'}} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        <Button color="inherit" component={Link} to="/">Về chúng tôi</Button>
+                        <Button color="inherit" component={Link} to="/">Về công ty</Button>
 
                         <Button color="inherit" component={Link} to="/">Trang chủ</Button>
 

@@ -20,12 +20,12 @@ and open the template in the editor.
     font-family: Inter;
 }
 
-.navbar-item img{
+.navbar-item img {
     max-height: 45px;
     max-width: 85%;
 }
 
-.navbar-start .navbar-item button{
+.navbar-start .navbar-item button {
     color: #fff;
     background-color: #000;
     border: none;
@@ -36,33 +36,33 @@ and open the template in the editor.
     font-size: 16px;
 }
 
-.navbar-start .navbar-item button:hover{
+.navbar-start .navbar-item button:hover {
     color: #D9AB73;
     background-color: #000;
 }
 
-.navbar-start a{
+.navbar-start a {
     color: #fff;
 }
 
-.navbar-start button{
+.navbar-start button {
     /*    color: #fff;
         background-color: #000;*/
 }
 
-a.navbar-item:hover{
+a.navbar-item:hover {
     color: #D9AB73;
     background-color: #000;
 }
 
-.navbar-end .navbar-item .buttons button{
+.navbar-end .navbar-item .buttons button {
     color: #D9AB73;
     background-color: #000;
     margin-right: 0px;
     font-family: Inter;
 }
 
-.navbar-end .navbar-item .buttons button:hover{
+.navbar-end .navbar-item .buttons button:hover {
     color: #fff;
 }
 
@@ -70,22 +70,23 @@ a.navbar-item:hover{
     padding: 0 5px;
 }
 
-.navbar-container-1  button{
+.navbar-container-1 button {
     /*padding: 0 5px;*/
     background-color: #000;
 }
 
-.navbar-container-1  navbar-1{
+.navbar-container-1 navbar-1 {
     padding: 5px 14px;
     color: #D9AB73;
     font-size: 18px;
     font-family: Inter;
     font-weight: 700;
     word-wrap: break-word;
-    border-radius: 30px; border: 3px #D9AB73 solid
+    border-radius: 30px;
+    border: 3px #D9AB73 solid
 }
 
-.navbar-container-1  button:hover {
+.navbar-container-1 button:hover {
     color: #fff;
 }
 
@@ -93,14 +94,15 @@ a.navbar-item:hover{
     color: #fff;
 }
 
-.navbar-1{
+.navbar-1 {
     padding: 5px 14px;
     color: #D9AB73;
     font-size: 18px;
     font-family: Inter;
     font-weight: 700;
     word-wrap: break-word;
-    border-radius: 30px; border: 3px #D9AB73 solid
+    border-radius: 30px;
+    border: 3px #D9AB73 solid
 }
 
 .navbar-1-list {
@@ -110,7 +112,8 @@ a.navbar-item:hover{
     font-family: Inter;
     font-weight: 700;
     word-wrap: break-word;
-    border: 30px; border: 3px #D9AB73 solid;
+    border: 30px;
+    border: 3px #D9AB73 solid;
 }
 
 .navbar-end .hover-down {
@@ -141,7 +144,7 @@ a.navbar-item:hover{
     border-color: #D9AB73;
 }
 
-.field .button-search  {
+.field .button-search {
     background: #000;
     width: 100%;
     color: #D9AB73;
@@ -185,7 +188,7 @@ a.navbar-item:hover{
     flex-shrink: 0;
     background-color: #000;
     border: 2px solid #D9AB73;
-    border-radius: 15px ;
+    border-radius: 15px;
     /*border-color: #D9AB73;*/
 }
 
@@ -238,7 +241,7 @@ a.navbar-item:hover{
     padding: 15px 0 0 0
 }
 
-.footer-container{
+.footer-container {
     display: flex;
     justify-content: space-around;
     padding-top: 12px;
@@ -297,7 +300,7 @@ a.navbar-item:hover{
 
 /* login */
 .navbar-item .navbar-dropdown {
-    right:0;
+    right: 0;
     left: initial
 }
 
@@ -314,11 +317,11 @@ button {
 }
 
 .navbar-dropdown .navbar-item button:hover {
-    background-color: #000; 
+    background-color: #000;
     color: #fff;
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
     .navbar-dropdown a.navbar-item {
         padding-right: 16px !important;
         color: #fff;
@@ -348,7 +351,7 @@ button {
 }
 
 .navbar-dropdown .navbar-item span:hover {
-    color: #D9AB73 !important;  
+    color: #D9AB73 !important;
 }
 
 .navbar-item .navbar-link:focus {
@@ -357,8 +360,8 @@ button {
 }
 
 .navbar-dropdown a.navbar-item:hover {
-    background-color: initial; 
-    color: #D9AB73 !important;  
+    background-color: initial;
+    color: #D9AB73 !important;
 }
 
 .navbar-dropdown a.navbar-item:focus {
@@ -366,7 +369,9 @@ button {
 }
 
 .navbar-link:not(.is-arrowless)::after {
-    border-color: #D9AB73;; /* Default border color */
+    border-color: #D9AB73;
+    ;
+    /* Default border color */
 }
 
 /* Styles when .navbar-link is focused */
@@ -376,7 +381,7 @@ button {
 }
 
 
-.navbar-divider  {
+.navbar-divider {
     background-color: #323232;
 }
 
@@ -395,7 +400,7 @@ button {
     background-repeat: no-repeat;
     background-attachment: inherit;
     max-height: calc(100vh - 125px);
-    min-height:  calc(100vh - 125px);
+    min-height: calc(100vh - 125px);
     margin: 0;
     padding: 0;
 }
@@ -436,9 +441,11 @@ button {
     color: #D9AB73;
     font-family: Inter;
 }
+
 .header-login a {
     display: inline-block;
 }
+
 .header-login img {
     max-width: 100%;
     height: auto;
@@ -450,7 +457,8 @@ button {
 }
 
 .container login {
-    text-align: center; /* Căn giữa nội dung trong container */
+    text-align: center;
+    /* Căn giữa nội dung trong container */
 }
 
 .register-if-dont-have-container,
@@ -487,9 +495,7 @@ button {
     margin-top: 16px;
 }
 
-.form-login-container {
-
-}
+.form-login-container {}
 
 .input-username::placeholder {
     color: #fff;
@@ -497,7 +503,7 @@ button {
 
 .input-username:focus,
 .input-username:hover,
-.input-username:active{
+.input-username:active {
     border-color: #000;
     border-bottom: #D9AB73 3px solid;
     box-shadow: initial;
@@ -513,7 +519,7 @@ button {
 
 .input-password:focus,
 .input-password:hover,
-.input-password:active{
+.input-password:active {
     border-color: #000;
     border-bottom: #D9AB73 3px solid;
     box-shadow: initial;
@@ -551,6 +557,7 @@ button {
     font-size: 16px;
     font-weight: bold;
 }
+
 /*.img-logo-login {
     max-width: 50px;
 }*/
@@ -603,9 +610,10 @@ button {
 }
 
 .css-1y942vo-MuiButtonBase-root-MuiButton-root {
-    color:  #3e3e65 !important;
+    color: #3e3e65 !important;
     background-color: unset !important;
     font-weight: 700 !important;
+    font-size: 16px !important;
 }
 
 button {
@@ -622,4 +630,119 @@ button {
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.04);
     color: #10aad6 !important;
+}
+
+.w3-content {
+    max-width: unset !important;
+}
+
+.slide-img {
+    height: 500px;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    /* height: 100%;
+    width: 100%; 
+    object-fit: cover;  */
+}
+
+.mySlides {
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+    /* Add transition property */
+}
+
+.mySlides.active {
+    display: block;
+    opacity: 1;
+}
+
+.w3-display-bottommiddle {
+    bottom: 40px;
+}
+
+.text-slideshow {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.33);
+    font-weight: bold;
+    font-size: 20px !important;
+}
+
+@keyframes slideEffect {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.mySlides {
+    display: none;
+    animation: slideEffect 1s;
+}
+
+/* Hiển thị slide hiện tại */
+.mySlides.active {
+    display: block;
+    opacity: 1;
+}
+
+.w3-display-container {
+    position: relative;
+}
+
+/* Position the slide wrappers */
+.slides-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Apply animation to slides */
+  .mySlides {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease; /* Add transition for smooth opacity change */
+  }
+
+/* Show active slide */
+.mySlides.active {
+  opacity: 1;
+}
+
+/* Define animation for the current slide */
+.mySlides.active {
+  animation: slideEffect 1s forwards;
+}
+
+/* Define animation for the previous slide */
+.mySlides.active.previous-slide {
+  animation: slideOutEffect 1s forwards;
+}
+
+/* Define animation */
+@keyframes slideEffect {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutEffect {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
 }
