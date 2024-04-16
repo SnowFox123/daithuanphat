@@ -10,26 +10,10 @@ function SlideshowBrand() {
     const { id } = useParams();
 
     useEffect(() => {
-        if (!product) return; // Add this condition to prevent accessing properties of null product
-
-        if (Object.keys(product).filter(key => key.startsWith('image')).length <= 1) {
-            return; // If there's only one slide, no need to set an interval
-        }
-
-        const intervalId = setInterval(() => {
-            const nextSlide = currentSlide === Object.keys(product).filter(key => key.startsWith('image')).length ? 1 : currentSlide + 1;
-            setCurrentSlide(nextSlide);
-        }, 5000); // Change slide every 5 seconds
-
-        return () => clearInterval(intervalId);
-    }, [currentSlide, product]);
-
-    useEffect(() => {
         const getProduct = async () => {
             try {
-                const response = await axios.get(`https://65e177e3a8583365b3166e81.mockapi.io/daithuanphat/${id}`);
+                const response = await axios.get(`https://65ea1a08c9bf92ae3d3b159b.mockapi.io/daithuanphat/${id}`);
                 setProduct(response.data);
-                setCurrentSlide(1); // Reset currentSlide when URL changes
             } catch (error) {
                 console.error('Error fetching product:', error);
             }
@@ -43,49 +27,34 @@ function SlideshowBrand() {
     };
 
     const goToPreviousSlide = () => {
-        if (!product) return; // Add this condition to prevent accessing properties of null product
-        const previousSlide = currentSlide === 1 ? Object.keys(product).filter(key => key.startsWith('image')).length : currentSlide - 1;
+        const previousSlide = currentSlide === 1 ? 4 : currentSlide - 1;
         setCurrentSlide(previousSlide);
     };
 
     const goToNextSlide = () => {
-        if (!product) return; // Add this condition to prevent accessing properties of null product
-        const nextSlide = currentSlide === Object.keys(product).filter(key => key.startsWith('image')).length ? 1 : currentSlide + 1;
+        const nextSlide = currentSlide === 4 ? 1 : currentSlide + 1;
         setCurrentSlide(nextSlide);
     };
 
-    if (!product) {
-        return (
-            <div className="CSSgal">
-                <p className="loading">Loading...</p>
-            </div>
-        );
-    }
-
-    const images = Object.keys(product)
-        .filter(key => key.startsWith('image'))
-        .map((key, index) => (
-            <img
-                key={index}
-                src={typeof product[key] === 'string' ? product[key] : product[key].url}
-                alt={`Slide ${index + 1}`}
-            />
-        ));
-
-    const slideButtons = images.map((_, index) => (
-        <button
-            key={index}
-            onClick={() => goToSlide(index + 1)}
-            className={currentSlide === index + 1 ? 'active' : ''}
-        >
-            {index + 1}
-        </button>
-    ));
-
     return (
         <div className="CSSgal">
+            <s id="s1"></s>
+            <s id="s2"></s>
+            <s id="s3"></s>
+            <s id="s4"></s>
+
             <div className="slider" style={{ transform: `translateX(-${(currentSlide - 1) * 100}%)` }}>
-                <div>{images}</div>
+                {product ? (
+                    <div>
+                        {product.image1 && <img src={typeof product.image1 === 'string' ? product.image : product.image1.url} alt="Slide 1" />}
+                        {product.image2 && <img src={typeof product.image2 === 'string' ? product.image2 : product.image2.url} alt="Slide 2" />}
+                        {product.image3 && <img src={typeof product.image3 === 'string' ? product.image3 : product.image3.url} alt="Slide 3" />}
+                        {product.image4 && <img src={typeof product.image4 === 'string' ? product.image4 : product.image4.url} alt="Slide 4" />}
+                        {product.image5 && <img src={typeof product.image5 === 'string' ? product.image5 : product.image4.url} alt="Slide 5" />}
+                    </div>
+                ) : (
+                    <p className="loading">Loading...</p>
+                )}
             </div>
 
             <div className="prevNext prevNext-2">
@@ -96,7 +65,15 @@ function SlideshowBrand() {
             </div>
 
             <div className="bullets">
-                {slideButtons}
+                {[1, 2, 3, 4].map((pageNumber) => (
+                    <button
+                        key={pageNumber}
+                        onClick={() => goToSlide(pageNumber)}
+                        className={currentSlide === pageNumber ? 'active' : ''}
+                    >
+                        {pageNumber}
+                    </button>
+                ))}
             </div>
         </div>
     );

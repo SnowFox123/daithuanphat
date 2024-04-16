@@ -46,12 +46,8 @@ export default function BrandDetail() {
                             <Grid key={product.id} item xs={12} md={3} sm = {6}>
                                 <Item >
                                     <Link to={`/detail/${product.id}`}>
-                                        <img className='card_image-2' src={product.image} alt={product.id} />
+                                        <img className='card_image-2' src={product.image1} alt={product.id} />
                                     </Link>
-                                    {/* <h3 className='title_film'>{product.brandName}</h3>
-                                    <h3 className='title_film'>{product.price}</h3> */}
-                                    {/* <button onClick={() => handleViewPopup(product)}>View Detail</button> */}
-                                    {/* <Link to={`/detail/${product.id}`} className="button-view-detail">View Detail</Link> */}
                                 </Item>
                             </Grid>
                         ))}

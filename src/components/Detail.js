@@ -26,7 +26,7 @@ const Detail = () => {
     useEffect(() => {
         const getProduct = async () => {
             try {
-                const response = await axios.get(`https://65e177e3a8583365b3166e81.mockapi.io/daithuanphat/${id}`);
+                const response = await axios.get(`https://65ea1a08c9bf92ae3d3b159b.mockapi.io/daithuanphat/${id}`);
                 console.log(response.data)
                 setProduct(response.data);
             } catch (error) {

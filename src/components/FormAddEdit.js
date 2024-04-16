@@ -7,7 +7,11 @@ const URL = 'https://65ea1a08c9bf92ae3d3b159b.mockapi.io/daithuanphat';
 
 const initialState = {
   brandName: '',
-  imageURL: '', // Add imageURL field to store the URL of the uploaded image
+  imageURL1: '',
+  imageURL2: '',
+  imageURL3: '',
+  imageURL4: '',
+  imageURL5: '',
   brandDescription: '',
   status: false,
 };
@@ -23,7 +27,7 @@ export default function FormAddEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [state, setState] = useState(initialState);
-  const { brandName, imageURL, brandDescription, status } = state; // Use imageURL instead of image
+  const { brandName, imageURL1, imageURL2, imageURL3, imageURL4, imageURL5, brandDescription, status } = state; // Use imageURL1 instead of image
   const [errors, setErrors] = useState(error_init);
 
   useEffect(() => {
@@ -48,12 +52,12 @@ export default function FormAddEdit() {
   const addNewProduct = async (data) => {
     // Convert the image to a Base64 string
     const reader = new FileReader();
-    reader.readAsDataURL(data.image);
+    reader.readAsDataURL(data.image1);
     reader.onloadend = async () => {
       const base64Image = reader.result.split(',')[1];
 
       // Include the Base64 string in the request payload
-      const newData = { ...data, image1: base64Image };
+      const newData = { ...data, image1: base64Image, image2: base64Image, image3: base64Image, image4: base64Image, image5: base64Image };
 
       try {
         const res = await axios.post(`${URL}`, newData);
@@ -77,11 +81,6 @@ export default function FormAddEdit() {
       isValid = false;
     }
 
-    // if (!imageURL) { // Check if imageURL is empty
-    //   error.image_err = 'Image is required';
-    //   isValid = false;
-    // }
-
     if (typeof status !== 'boolean') {
       error.status_err = 'Status must be either True or False';
       isValid = false;
@@ -98,27 +97,77 @@ export default function FormAddEdit() {
     return isValid;
   };
 
-  const handleFileInputChange = (event) => {
+  const handleFileInputChange = (event, imageNumber) => {
     const file = event.target.files[0]; // Get the first file from the FileList
+  
+    // Resize the image before uploading
+    resizeImage(file, (resizedImage) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const imageURL = reader.result;
+        setState((prevState) => ({
+          ...prevState,
+          [`imageURL${imageNumber}`]: imageURL,
+        }));
+      };
+      reader.readAsDataURL(resizedImage);
+    });
+  };
+  
+
+  const resizeImage = (file, callback) => {
     const reader = new FileReader();
-    reader.onloadend = () => {
-      // Create URL from the uploaded file
-      const imageURL = reader.result;
-      setState((prevState) => ({
-        ...prevState,
-        imageURL: imageURL, // Store the URL of the uploaded image
-      }));
+    reader.readAsDataURL(file);
+    reader.onload = (event) => {
+      const img = new Image();
+      img.src = event.target.result;
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const MAX_WIDTH = 800;
+        const MAX_HEIGHT = 600;
+        let width = img.width;
+        let height = img.height;
+
+        if (width > height) {
+          if (width > MAX_WIDTH) {
+            height *= MAX_WIDTH / width;
+            width = MAX_WIDTH;
+          }
+        } else {
+          if (height > MAX_HEIGHT) {
+            width *= MAX_HEIGHT / height;
+            height = MAX_HEIGHT;
+          }
+        }
+
+        canvas.width = width;
+        canvas.height = height;
+
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+
+        canvas.toBlob((blob) => {
+          const resizedFile = new File([blob], file.name, {
+            type: 'image/jpeg',
+            lastModified: Date.now(),
+          });
+          callback(resizedFile);
+        }, 'image/jpeg', 0.7);
+      };
     };
-    reader.readAsDataURL(file); // Read the file as a Data URL
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (validateForm()) {
-      const formData = { // Include imageURL in the formData
+      const formData = { // Include imageURL1 in the formData
         brandName: state.brandName,
-        image1: state.imageURL, // Send the imageURL instead of the file
+        image1: state.imageURL1, // Send the imageURL1 instead of the file
+        image2: state.imageURL2, // Send the imageURL1 instead of the file
+        image3: state.imageURL3, // Send the imageURL1 instead of the file
+        image4: state.imageURL4, // Send the imageURL1 instead of the file
+        image5: state.imageURL5, // Send the imageURL1 instead of the file
         brandDescription: state.brandDescription,
         status: state.status,
       };
@@ -163,12 +212,41 @@ export default function FormAddEdit() {
             {errors.brandName_err && <span className="error">{errors.brandName_err}</span>}
           </div>
           <div>
-            <label htmlFor="image">Image: </label>
-            <input type="file" name="image" onChange={handleFileInputChange} />
+            <label htmlFor="image1">Image1: </label>
+            <input type="file" name="image1" onChange={(event) => handleFileInputChange(event, 1)} />
             {errors.image_err && <span className="error">{errors.image_err}</span>}
           </div>
           <div>
-            {imageURL && <img src={imageURL} alt="Uploaded" style={{ maxWidth: '200px', marginTop: '10px' }} />} {/* Render the image */}
+            {imageURL1 && <img src={imageURL1} alt="Uploaded" style={{ maxWidth: '200px', marginTop: '10px' }} />} {/* Render the image */}
+          </div>
+          <div>
+            <label htmlFor="image2">Image2: </label>
+            <input type="file" name="image2" onChange={(event) => handleFileInputChange(event, 2)} />
+            {errors.image_err && <span className="error">{errors.image_err}</span>}
+          </div>
+          <div>
+            {imageURL2 && <img src={imageURL2} alt="Uploaded" style={{ maxWidth: '200px', marginTop: '10px' }} />} {/* Render the image */}
+          </div>
+          <div>
+            <label htmlFor="image3">Image 3: </label>
+            <input type="file" name="image3" onChange={(event) => handleFileInputChange(event, 3)} />
+          </div>
+          <div>
+            {imageURL3 && <img src={imageURL3} alt="Uploaded" style={{ maxWidth: '200px', marginTop: '10px' }} />}
+          </div>
+          <div>
+            <label htmlFor="image4">Image 4: </label>
+            <input type="file" name="image4" onChange={(event) => handleFileInputChange(event, 4)} />
+          </div>
+          <div>
+            {imageURL4 && <img src={imageURL4} alt="Uploaded" style={{ maxWidth: '200px', marginTop: '10px' }} />}
+          </div>
+          <div>
+            <label htmlFor="image5">Image 5: </label>
+            <input type="file" name="image" onChange={(event) => handleFileInputChange(event, 5)} />
+          </div>
+          <div>
+            {imageURL5 && <img src={imageURL5} alt="Uploaded" style={{ maxWidth: '200px', marginTop: '10px' }} />}
           </div>
           <div>
             <label htmlFor="brandDescription">Brand Description: </label>
