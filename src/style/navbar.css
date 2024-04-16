@@ -6,6 +6,9 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    padding-top: 11px;
+    margin: 0;
   }
   
   .dropbtn:hover {

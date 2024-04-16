@@ -1,0 +1,25 @@
+.BrandDetail-container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px 0;
+    max-height: 600px; /* Set a maximum height if desired */
+    position: relative;
+}
+
+.card_image-2 {
+    display: block;
+    border-radius: 2px; /* Adjust the border radius as needed */
+    width: 100%;
+    height: 200px; /* Fill the container */
+    object-fit: contain; /* Maintain aspect ratio and fill the container */
+    transition: transform 0.3s ease; /* Adding transition for smooth effect */
+}
+
+.card_image-2:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.card_image-2:hover,
+.card_image-2 {
+    border: 2px solid transparent; /* Adding transparent border */
+}

@@ -746,3 +746,19 @@ button {
     opacity: 0;
   }
 }
+
+@media (min-width: 600px) {
+    .css-r6ewbb-MuiToolbar-root {
+        min-height: 48px !important;
+    }
+}
+
+.header-title {
+    text-align: center;
+    font-size: 20px;
+    color: #3e3e65;;
+    text-decoration: underline #10aad6;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 35px 0;
+}

@@ -8,9 +8,10 @@ import FormAddEdit from "./components/FormAddEdit";
 import NavBar2 from "./components/Navbar2";
 import About from "./pages/About";
 import Detail from "./components/Detail";
-import Slideshow from "./components/Slideshow";
 
 import './style/style.css';
+import Slideshow3 from "./components/Slideshow3";
+import FullWidthGrid from "./components/info";
 
 function App() {
   return (
@@ -21,8 +22,11 @@ function App() {
           path="/"
           element={
             <>
-              <Slideshow />
-              {/* <Home /> */}
+              <Slideshow3 />
+              {/* <Slideshow /> */}
+              {/* <Slideshow2 /> */}
+              <FullWidthGrid />
+              <Home />
             </>
           }
         />
@@ -33,7 +37,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/detail/:id" element={<Detail />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

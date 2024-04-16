@@ -1,0 +1,37 @@
+.about-us-content {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .about-us-content h1 {
+    text-align: justify;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .about-us-content b {
+    color: #007bff; /* Blue color for bold text */
+  }
+  
+  .about-us-content p {
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .about-us-content a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .about-us-content a:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+  }
+  

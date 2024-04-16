@@ -1,8 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import SlideshowInfo from './SildeshowInfo';
 
 import "../style/detail.css"
+import BrandDetail from './BrandDetail';
+import SlideshowBrand from './slideshowBrand';
+
+const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+}));
 
 const Detail = () => {
     const [product, setProduct] = useState(null);
@@ -23,19 +38,27 @@ const Detail = () => {
     }, [id]);
 
     return (
-        <div className="detail-container">
-            {product ? (
-                <div>
-                    <h2 className="detail-name">{product.name}</h2>
-                    <img className="detail-image" src={product.image} alt={product.name} />
-                    <p className="detail-description">Description: {product.brandDescription}</p>
-                    {/* <p className="detail-rating">Rating: {product.rating}</p>
-                    <p className="detail-category">Category: {product.category}</p>
-                    <p className="detail-bestseller">Bestseller: {product.bestseller ? 'true' : 'false'}</p> */}
-                </div>
-            ) : (
-                <p className="loading">Loading...</p>
-            )}
+        <div style={{ paddingTop: '10px' }}>
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid style={{ padding: '0 40px' }} container spacing={2}>
+                    <Grid item xs={12} md={6}>
+                        <Item><SlideshowBrand /></Item>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <Item>
+                            {product ? (
+                                <div>
+                                    <h2 className="detail-name">{product.name}</h2>
+                                    <p className="detail-description">Description: {product.brandDescription}</p>
+                                </div>
+                            ) : (
+                                <p className="loading">Loading...</p>
+                            )}
+                        </Item>
+                    </Grid>
+                </Grid>
+            </Box>
+            <BrandDetail />
         </div>
     );
 };

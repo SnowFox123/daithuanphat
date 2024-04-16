@@ -1,0 +1,251 @@
+/* Put the common styles at the top */
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font: 16px/1.3 sans-serif;
+}
+
+/* Define the Slideshow component styles */
+.CSSgal {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* SLIDER */
+
+.CSSgal .slider {
+  height: 100%;
+  white-space: nowrap;
+  font-size: 0;
+  transition: 0.8s;
+}
+
+/* SLIDES */
+
+.CSSgal .slider>* {
+  font-size: 1rem;
+  display: inline-block;
+  white-space: normal;
+  vertical-align: top;
+  height: 100%;
+  width: 100%;
+  background: none 50% no-repeat;
+  background-size: cover;
+}
+
+/* PREV/NEXT, CONTAINERS & ANCHORS */
+
+.CSSgal .prevNext {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  width: 100%;
+  height: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.CSSgal .prevNext>div+div {
+  visibility: hidden;
+  /* Hide all but first P/N container */
+}
+
+.CSSgal .prevNext button {
+  /* width: 60px;
+  height: 60px;
+  line-height: 60px; */
+  font-size: 30px;
+  text-align: center;
+  opacity: 0.7;
+  transition: 0.3s;
+  transform: translateY(-50%);
+  background-color: #fff;
+}
+
+.CSSgal .prevNext-2 button {
+  /* width: 60px;
+  height: 60px;
+  line-height: 60px; */
+  font-size: 20px;
+  text-align: center;
+  opacity: 0.7;
+  transition: 0.3s;
+  transform: translateY(-50%);
+  background-color: #fff;
+}
+
+.CSSgal .prevNext button:hover {
+  opacity: 1;
+}
+
+.CSSgal .prevNext button+button {
+  left: auto;
+  right: 20px;
+}
+
+.CSSgal .prevNext button {
+  left: 20px;
+}
+
+/* Adjust the position of the navigation buttons */
+.CSSgal .prevNext button:first-child {
+  position: absolute;
+  margin: 0 auto;
+  margin-left: 3%;
+}
+
+.CSSgal .prevNext button:last-child {
+  position: absolute;
+  margin: 0 auto;
+  margin-right: 3%;
+}
+
+
+/* NAVIGATION */
+
+.CSSgal .bullets {
+  position: absolute;
+  z-index: 2;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Style for each bullet */
+.CSSgal .bullets button {
+  display: inline-block;
+  /* display: flex; */
+  align-items: center;
+  /* width: 30px; */
+  height: 30px;
+  font-size: 12px;
+  /* border-radius: 50%; */
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Style for the active bullet */
+.CSSgal .bullets button.active {
+  background-color: #fff;
+  /* Change background color for active bullet */
+}
+
+.CSSgal .bullets button:hover {
+  background-color: #fff;
+  /* Change background color for active bullet */
+}
+
+/* NAVIGATION BUTTONS */
+
+/* ALL: */
+.CSSgal>s:target~.bullets>* {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* ACTIVE */
+#s1:target~.bullets>*:nth-child(1) {
+  background: rgba(255, 255, 255, 1);
+}
+
+#s2:target~.bullets>*:nth-child(2) {
+  background: rgba(255, 255, 255, 1);
+}
+
+#s3:target~.bullets>*:nth-child(3) {
+  background: rgba(255, 255, 255, 1);
+}
+
+#s4:target~.bullets>*:nth-child(4) {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* More slides? Add here more rules */
+
+/* PREV/NEXT CONTAINERS VISIBILITY */
+
+/* ALL: */
+.CSSgal>s:target~.prevNext>* {
+  visibility: hidden;
+}
+
+/* ACTIVE: */
+#s1:target~.prevNext>*:nth-child(1) {
+  visibility: visible;
+}
+
+#s2:target~.prevNext>*:nth-child(2) {
+  visibility: visible;
+}
+
+#s3:target~.prevNext>*:nth-child(3) {
+  visibility: visible;
+}
+
+#s4:target~.prevNext>*:nth-child(4) {
+  visibility: visible;
+}
+
+/* SLIDER ANIMATION POSITIONS */
+
+#s1:target~.slider {
+  transform: translateX(0%);
+}
+
+#s2:target~.slider {
+  transform: translateX(-100%);
+}
+
+#s3:target~.slider {
+  transform: translateX(-200%);
+}
+
+#s4:target~.slider {
+  transform: translateX(-300%);
+}
+
+/* YOU'RE THE DESIGNER! 
+ ____________________
+ All above was mainly to get it working :)
+ CSSgal CUSTOM STYLES / OVERRIDES HERE: */
+
+.CSSgal {
+  color: #fff;
+  text-align: center;
+}
+
+.CSSgal .slider h2 {
+  margin-top: 20vh;
+  margin-bottom: 16vh;
+  font-weight: 200;
+  letter-spacing: -0.06em;
+  word-spacing: 0.2em;
+  font-size: 3em;
+}
+
+.CSSgal .slider p {
+  position: relative;
+  margin-bottom: 8vh;
+  margin-top: 60vh;
+  color: white;
+  background: rgba(0, 0, 0, 0.33);
+  font-size: 26px;
+  width: 45%;
+  left: 28%;
+}
+
+.CSSgal a {
+  border-radius: 50%;
+  margin: 0 3px;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+}

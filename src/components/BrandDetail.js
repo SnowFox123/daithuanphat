@@ -9,6 +9,8 @@ import Grid from '@mui/material/Grid';
 
 import { Link } from 'react-router-dom'
 
+import '../style/BrandDetail.css'
+
 const URL = 'https://65ea1a08c9bf92ae3d3b159b.mockapi.io/daithuanphat';
 
 
@@ -21,7 +23,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 
-export default function Home() {
+export default function BrandDetail() {
     const [products, setProducts] = useState([]);
 
     const getListProducts = async () => {
@@ -38,14 +40,13 @@ export default function Home() {
     return (
         <div style={{backgroundColor: '#f1f1f1'}} className="container-home-page">
             <Box sx={{ flexGrow: 1 }}>
-            <p className='header-title'>SẢN PHẨM NỔI BẬT</p>
-                <Grid container spacing={3}>
+                <Grid container spacing={2} className='BrandDetail-container'>
                     {products && products
                         .map((product) => (
-                            <Grid key={product.id} item xs={12} md={4}>
-                                <Item>
+                            <Grid key={product.id} item xs={12} md={3} sm = {6}>
+                                <Item >
                                     <Link to={`/detail/${product.id}`}>
-                                        <img className='card_image' src={product.image1} alt={product.id} />
+                                        <img className='card_image-2' src={product.image} alt={product.id} />
                                     </Link>
                                     {/* <h3 className='title_film'>{product.brandName}</h3>
                                     <h3 className='title_film'>{product.price}</h3> */}

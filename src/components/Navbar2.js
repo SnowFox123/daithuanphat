@@ -56,7 +56,7 @@ function NavBar2() {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <img className='logo-css' style={{ marginRight: '15px' }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPBgQmuTEbZF3eHkPG2h7_If4pGxXaILJlmg&usqp=CAU'></img>
+                    {/* <img className='logo-css' style={{ marginRight: '15px' }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPBgQmuTEbZF3eHkPG2h7_If4pGxXaILJlmg&usqp=CAU'></img> */}
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
