@@ -12,43 +12,34 @@ import Detail from "./components/Detail";
 import './style/style.css';
 import Slideshow3 from "./components/Slideshow3";
 import FullWidthGrid from "./components/info";
+import ResponsiveAppBar from "./components/NavBar";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/daithuanphat"> {/* Set basename to /daithuanphat */}
       <NavBar2 />
+      {/* <ResponsiveAppBar /> */}
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Slideshow3 />
-              {/* <Slideshow /> */}
-              {/* <Slideshow2 /> */}
-              <FullWidthGrid />
-              <Home />
-            </>
-          }
-        />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/add" element={<FormAddEdit />} />
         <Route path="/about" element={<About />} />
         <Route path="/update/:id" element={<FormAddEdit />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/detail/:id" element={<Detail />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Slideshow3 />
+              <FullWidthGrid />
+              <Home />
+            </>
+          }
+        />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }
 
 export default App;
-
-
-
-
-// npx create-react-app
-// npm install @mui/material @emotion/react @emotion/styled
-// npm install @mui/icons-material
-// npm i react-router-dom
-// npm install axios

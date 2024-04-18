@@ -27,7 +27,7 @@ export default function Dashboard() {
     }, []);
 
     const handleDelete = async (id) => {
-        if (window.confirm(`Are you sure that you want to delete a toy with ID: ${id}`)) {
+        if (window.confirm(`Are you sure that you want to delete a product with ID: ${id}`)) {
             try {
                 const res = await axios.delete(`${URL}/${id}`);
                 if (res.status === 200) {
@@ -47,7 +47,7 @@ export default function Dashboard() {
         <div className='staff-table'>
             <div className='btn-add'>
                 <Link to={'/add'}>
-                    <button className='add-staff-btn'>Add new toy</button>
+                    <button className='add-staff-btn'>Add new product</button>
                 </Link>
             </div>
             <table>

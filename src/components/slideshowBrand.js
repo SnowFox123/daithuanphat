@@ -22,6 +22,15 @@ function SlideshowBrand() {
         getProduct();
     }, [id]);
 
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            const nextSlide = (currentSlide % 4) + 1; // Assuming you have 4 slides
+            setCurrentSlide(nextSlide);
+        }, 5000); // Change slide every 5 seconds
+
+        return () => clearInterval(intervalId);
+    }, [currentSlide]);
+
     const goToSlide = (slideNumber) => {
         setCurrentSlide(slideNumber);
     };
@@ -43,15 +52,26 @@ function SlideshowBrand() {
             <s id="s3"></s>
             <s id="s4"></s>
 
+
             <div className="slider" style={{ transform: `translateX(-${(currentSlide - 1) * 100}%)` }}>
                 {product ? (
-                    <div>
-                        {product.image1 && <img src={typeof product.image1 === 'string' ? product.image : product.image1.url} alt="Slide 1" />}
-                        {product.image2 && <img src={typeof product.image2 === 'string' ? product.image2 : product.image2.url} alt="Slide 2" />}
-                        {product.image3 && <img src={typeof product.image3 === 'string' ? product.image3 : product.image3.url} alt="Slide 3" />}
-                        {product.image4 && <img src={typeof product.image4 === 'string' ? product.image4 : product.image4.url} alt="Slide 4" />}
-                        {product.image5 && <img src={typeof product.image5 === 'string' ? product.image5 : product.image4.url} alt="Slide 5" />}
-                    </div>
+                    <>
+                        {/* <div>
+                            {product.image1 && <img className='img-detail-brand' src={typeof product.image1 === 'string' ? product.image1 : product.image1.url} alt="Slide 1" />}
+                        </div> */}
+                        <div>
+                            {product.image2 && <img className='img-detail-brand' src={typeof product.image2 === 'string' ? product.image2 : product.image2.url} alt="Slide 2" />}
+                        </div>
+                        <div>
+                            {product.image3 && <img className='img-detail-brand' src={typeof product.image3 === 'string' ? product.image3 : product.image3.url} alt="Slide 3" />}
+                        </div>
+                        <div>
+                            {product.image4 && <img className='img-detail-brand' src={typeof product.image4 === 'string' ? product.image4 : product.image4.url} alt="Slide 4" />}
+                        </div>
+                        <div>
+                            {product.image5 && <img className='img-detail-brand' src={typeof product.image5 === 'string' ? product.image5 : product.image5.url} alt="Slide 5" />}
+                        </div>
+                    </>
                 ) : (
                     <p className="loading">Loading...</p>
                 )}

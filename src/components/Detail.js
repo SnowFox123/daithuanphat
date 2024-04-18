@@ -17,6 +17,8 @@ const Item = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
+    overflowY: 'auto', // Ensure vertical scrolling when content overflows
+    maxHeight: '400px', // Set a maximum height to trigger scrolling
 }));
 
 const Detail = () => {
@@ -37,19 +39,21 @@ const Detail = () => {
         getProduct();
     }, [id]);
 
+    const mdGridItemStyle = window.innerWidth >= 960 ? { padding: '0 260px' } : {}; // Apply padding for medium (md) screen size
+
     return (
         <div style={{ paddingTop: '10px' }}>
             <Box sx={{ flexGrow: 1 }}>
-                <Grid style={{ padding: '0 40px' }} container spacing={2}>
+                <Grid style={{  width:'80%', justifyContent:'center',alignItems:'center',left:'10%',position:'relative'  }} container spacing={2}>
                     <Grid item xs={12} md={6}>
-                        <Item><SlideshowBrand /></Item>
+                        <SlideshowBrand />
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <Item>
                             {product ? (
                                 <div>
                                     <h2 className="detail-name">{product.name}</h2>
-                                    <p className="detail-description">Description: {product.brandDescription}</p>
+                                    <p className="detail-description">{product.brandDescription}</p>
                                 </div>
                             ) : (
                                 <p className="loading">Loading...</p>

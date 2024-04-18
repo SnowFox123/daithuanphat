@@ -50,26 +50,17 @@ export default function FormAddEdit() {
   };
 
   const addNewProduct = async (data) => {
-    // Convert the image to a Base64 string
-    const reader = new FileReader();
-    reader.readAsDataURL(data.image1);
-    reader.onloadend = async () => {
-      const base64Image = reader.result.split(',')[1];
-
-      // Include the Base64 string in the request payload
-      const newData = { ...data, image1: base64Image, image2: base64Image, image3: base64Image, image4: base64Image, image5: base64Image };
-
-      try {
-        const res = await axios.post(`${URL}`, newData);
-        if (res.status === 200 || res.status === 201) {
-          alert('New Product has been added successfully');
-          navigate('/dashboard');
-        }
-      } catch (error) {
-        console.error('Error adding new product:', error);
+    try {
+      const res = await axios.post(`${URL}`, data);
+      if (res.status === 200 || res.status === 201) {
+        alert('New Product has been added successfully');
+        navigate('/dashboard');
       }
-    };
+    } catch (error) {
+      console.error('Error adding new product:', error);
+    }
   };
+
 
 
   const validateForm = () => {
@@ -99,7 +90,7 @@ export default function FormAddEdit() {
 
   const handleFileInputChange = (event, imageNumber) => {
     const file = event.target.files[0]; // Get the first file from the FileList
-  
+
     // Resize the image before uploading
     resizeImage(file, (resizedImage) => {
       const reader = new FileReader();
@@ -113,7 +104,7 @@ export default function FormAddEdit() {
       reader.readAsDataURL(resizedImage);
     });
   };
-  
+
 
   const resizeImage = (file, callback) => {
     const reader = new FileReader();
@@ -194,7 +185,7 @@ export default function FormAddEdit() {
   return (
     <div className="container">
       <div className="form">
-        <h2>{id ? 'Update Form' : 'Add New Toy'}</h2>
+        <h2>{id ? 'Update Form' : 'Add New Product'}</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="status">Status: </label>

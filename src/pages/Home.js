@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom'
 
 const URL = 'https://65ea1a08c9bf92ae3d3b159b.mockapi.io/daithuanphat';
 
-
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
@@ -20,6 +19,13 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 }));
 
+const Image = styled('img')(({ theme }) => ({
+    transition: 'transform 0.3s ease',
+    '&:hover': {
+        transform: 'scale(1.04)',
+        border: 'green solid 2px'
+    },
+}));
 
 export default function Home() {
     const [products, setProducts] = useState([]);
@@ -36,21 +42,17 @@ export default function Home() {
     }, []);
 
     return (
-        <div style={{backgroundColor: '#f1f1f1'}} className="container-home-page">
+        <div style={{ backgroundColor: '#f1f1f1' }} className="container-home-page">
             <Box sx={{ flexGrow: 1 }}>
-            <p className='header-title'>SẢN PHẨM NỔI BẬT</p>
+                <p className='header-title'>SẢN PHẨM NỔI BẬT</p>
                 <Grid container spacing={3}>
                     {products && products
                         .map((product) => (
                             <Grid key={product.id} item xs={12} md={4}>
                                 <Item>
                                     <Link to={`/detail/${product.id}`}>
-                                        <img className='card_image' src={product.image1} alt={product.id} />
+                                        <Image className='card_image' src={product.image1} alt={product.id} />
                                     </Link>
-                                    {/* <h3 className='title_film'>{product.brandName}</h3>
-                                    <h3 className='title_film'>{product.price}</h3> */}
-                                    {/* <button onClick={() => handleViewPopup(product)}>View Detail</button> */}
-                                    {/* <Link to={`/detail/${product.id}`} className="button-view-detail">View Detail</Link> */}
                                 </Item>
                             </Grid>
                         ))}
