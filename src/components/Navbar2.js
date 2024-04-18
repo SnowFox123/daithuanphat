@@ -11,6 +11,8 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 
 import "../style/navbar.css";
+import "../style/style.css"
+
 
 const pages = [
     { name: 'Về công ty', path: '/about' },
