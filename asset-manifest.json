@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/daithuanphat/static/css/main.9be5d87c.css",
-    "main.js": "/daithuanphat/static/js/main.77cd13e3.js",
+    "main.js": "/daithuanphat/static/js/main.896e9e22.js",
     "static/js/453.2244a7b9.chunk.js": "/daithuanphat/static/js/453.2244a7b9.chunk.js",
     "static/media/vp5.jpg": "/daithuanphat/static/media/vp5.1abd0340a9e30793afab.jpg",
     "static/media/vp7.jpg": "/daithuanphat/static/media/vp7.21f94bca0d3377698fce.jpg",
@@ -9,11 +9,11 @@
     "static/media/vp.jpg": "/daithuanphat/static/media/vp.5e7a1c9332106269ae02.jpg",
     "index.html": "/daithuanphat/index.html",
     "main.9be5d87c.css.map": "/daithuanphat/static/css/main.9be5d87c.css.map",
-    "main.77cd13e3.js.map": "/daithuanphat/static/js/main.77cd13e3.js.map",
+    "main.896e9e22.js.map": "/daithuanphat/static/js/main.896e9e22.js.map",
     "453.2244a7b9.chunk.js.map": "/daithuanphat/static/js/453.2244a7b9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9be5d87c.css",
-    "static/js/main.77cd13e3.js"
+    "static/js/main.896e9e22.js"
   ]
 }
