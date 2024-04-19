@@ -52,7 +52,7 @@ const Detail = () => {
                         <Item>
                             {product ? (
                                 <div>
-                                    <h2 className="detail-name">{product.name}</h2>
+                                    <h2 className="detail-name">{product.brandName}</h2>
                                     <p className="detail-description">{product.brandDescription}</p>
                                 </div>
                             ) : (
