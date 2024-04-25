@@ -13,7 +13,6 @@ import { Link } from 'react-router-dom';
 import "../style/navbar.css";
 import "../style/style.css"
 
-
 const pages = [
     { name: 'Về công ty', path: '/about' },
     { name: 'Trang chủ', path: '/' },
@@ -35,8 +34,8 @@ function NavBar2() {
     };
 
     return (
-        <AppBar position="static">
-            <Toolbar>
+        <AppBar position="static" style={{ backgroundColor: '#fff', color: '#3e3e65' }}>
+            <Toolbar sx={{ justifyContent: 'center', '@media (max-width: 900px)': { justifyContent: 'left' } }}>
                 <IconButton
                     size="large"
                     edge="start"
@@ -66,7 +65,21 @@ function NavBar2() {
                 </Typography>
                 <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                     {pages.map((page, index) => (
-                        <Button key={index} color="inherit" component={Link} to={page.path}>
+                        <Button 
+                            key={index} 
+                            color="inherit" 
+                            component={Link} 
+                            to={page.path} 
+                            sx={{
+                                color: '#3e3e65',
+                                backgroundColor: 'unset',
+                                fontWeight: 700,
+                                fontSize: '16px',
+                                '&:hover': {
+                                    backgroundColor: 'unset',
+                                },
+                            }}
+                        >
                             {page.name}
                         </Button>
                     ))}
