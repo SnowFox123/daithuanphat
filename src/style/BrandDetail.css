@@ -2,7 +2,6 @@
     width: 70%;
     margin: 0 auto;
     padding: 20px 0;
-    max-height: 600px; /* Set a maximum height if desired */
     position: relative;
 }
 
@@ -17,6 +16,7 @@
 
 .card_image-2:hover {
     transform: scale(1.1); /* Zoom effect on hover */
+    border: green 2px solid !important;
 }
 
 .card_image-2:hover,

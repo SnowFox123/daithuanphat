@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useLocation } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -23,6 +24,7 @@ const pages = [
 ];
 
 function NavBar2() {
+    const location = useLocation();
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleOpenMenu = (event) => {
@@ -34,7 +36,7 @@ function NavBar2() {
     };
 
     return (
-        <AppBar position="static" style={{ backgroundColor: '#fff', color: '#3e3e65' }}>
+        <AppBar position="sticky" style={{ backgroundColor: '#fff', color: '#3e3e65' }}>
             <Toolbar sx={{ justifyContent: 'center', '@media (max-width: 900px)': { justifyContent: 'left' } }}>
                 <IconButton
                     size="large"
@@ -49,8 +51,8 @@ function NavBar2() {
                 <Typography
                     variant="h6"
                     noWrap
-                    component="a"
-                    href="#app-bar-with-responsive-menu"
+                    component={Link}
+                    to="/"
                     sx={{
                         mr: 2,
                         display: { xs: 'none', md: 'flex' },
@@ -71,12 +73,15 @@ function NavBar2() {
                             component={Link} 
                             to={page.path} 
                             sx={{
-                                color: '#3e3e65',
-                                backgroundColor: 'unset',
+                                color: location.pathname === page.path ? '#10aad6' : '#3e3e65',
+                                backgroundColor: location.pathname === page.path ? 'unset' : 'unset',
                                 fontWeight: 700,
                                 fontSize: '16px',
+                                textDecoration: 'none',
                                 '&:hover': {
-                                    backgroundColor: 'unset',
+                                    textDecoration: 'none',
+                                    backgroundColor: location.pathname === page.path ? 'unset' : 'rgba(0, 0, 0, 0.04)',
+                                    color: location.pathname === page.path ? '#10aad6' : '#10aad6',
                                 },
                             }}
                         >
@@ -101,7 +106,19 @@ function NavBar2() {
             >
                 {pages.map((page, index) => (
                     <MenuItem key={index} onClick={handleCloseMenu}>
-                        <Button color="inherit" component={Link} to={page.path}>
+                        <Button 
+                            color="inherit" 
+                            component={Link} 
+                            to={page.path}
+                            sx={{
+                                color: '#10aad6',
+                                textDecoration: 'none',
+                                '&:hover': {
+                                    textDecoration: 'none',
+                                    backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                                },
+                            }}
+                        >
                             {page.name}
                         </Button>
                     </MenuItem>

@@ -337,12 +337,12 @@ button {
     border-radius: unset;
 }
 
-.css-1y942vo-MuiButtonBase-root-MuiButton-root:hover {
+/* .css-1y942vo-MuiButtonBase-root-MuiButton-root:hover {
     -webkit-text-decoration: none;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.04);
     color: #10aad6 !important;
-}
+} */
 
 .w3-content {
     max-width: unset !important;
