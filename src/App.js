@@ -17,8 +17,9 @@ import ResponsiveAppBar from "./components/NavBar";
 function App() {
   return (
     <BrowserRouter basename="/daithuanphat"> {/* Set basename to /daithuanphat */}
-      <NavBar2 />
       {/* <ResponsiveAppBar /> */}
+
+      <NavBar2 />
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/add" element={<FormAddEdit />} />
