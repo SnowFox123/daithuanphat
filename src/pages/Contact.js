@@ -126,7 +126,7 @@ function Contact() {
                 Thông tin liên hệ
               </Box>
             </Typography>
-            <Grid item xs={12} md={12} style={{ display: 'flex', height: '400px' }}>
+            <Grid item xs={12} md={12} style={{  }}>
               <Box display="flex" alignItems="center" justifyContent="left">
                 <LocationOnIcon style={{ marginRight: 8 }} />
                 <p><strong>Địa chỉ</strong><br></br>22 Lý Chiêu Hoàng, Phường 10, Quận 6, TP HCM</p>
