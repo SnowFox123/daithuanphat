@@ -11,6 +11,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 
+import logoimg from '../image/dtp.png';
+
 import "../style/navbar.css";
 import "../style/style.css"
 
@@ -63,15 +65,33 @@ function NavBar2() {
                         textDecoration: 'none',
                     }}
                 >
-                    LOGO
+                     <img src={logoimg} alt="Logo" style={{ height: '80px', width:'80px' }} />
                 </Typography>
+                <Typography
+                    variant="h6"
+                    noWrap
+                    component={Link}
+                    to="/"
+                    sx={{
+                        mr: 2,
+                        display: { xs: 'flex', md: 'none' },
+                        fontFamily: 'monospace',
+                        fontWeight: 700,
+                        letterSpacing: '.3rem',
+                        color: 'inherit',
+                        textDecoration: 'none',
+                    }}
+                >
+                     <img src={logoimg} alt="Logo" style={{ height: '60px', width:'60px' }} />
+                </Typography>
+
                 <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                     {pages.map((page, index) => (
-                        <Button 
-                            key={index} 
-                            color="inherit" 
-                            component={Link} 
-                            to={page.path} 
+                        <Button
+                            key={index}
+                            color="inherit"
+                            component={Link}
+                            to={page.path}
                             sx={{
                                 color: location.pathname === page.path ? '#10aad6' : '#3e3e65',
                                 backgroundColor: location.pathname === page.path ? 'unset' : 'unset',
@@ -106,9 +126,9 @@ function NavBar2() {
             >
                 {pages.map((page, index) => (
                     <MenuItem key={index} onClick={handleCloseMenu}>
-                        <Button 
-                            color="inherit" 
-                            component={Link} 
+                        <Button
+                            color="inherit"
+                            component={Link}
                             to={page.path}
                             sx={{
                                 color: '#10aad6',

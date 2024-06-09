@@ -20,7 +20,7 @@ export default function FullWidthGrid() {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <p className='header-title'>+15 NĂM KINH NGHIỆM</p>
-            <Grid style={{ padding: '0 40px' }} container spacing={2}>
+            <Grid style={{ padding: '0 15px' }} container spacing={2}>
                 <Grid item xs={12} md={6}>
                     <Item><SlideshowInfo /></Item>
                 </Grid>

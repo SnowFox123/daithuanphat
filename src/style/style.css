@@ -511,6 +511,45 @@ button {
     }
 }
 
+.sdt-contact a{
+    color: #1ff56e !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.sdt-contact a:hover{
+    color: #10aad6 !important;
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
+.aff-left {
+    padding: 0 0 0 15px;
+    margin: 0 0 0 15px;
+    border-left: 1px solid #FFF
+}
+
+.lhht {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.lhht:hover {
+    color: #10aad6 !important;
+    text-decoration: none !important;
+}
+
+.icon-navbar:hover {
+    color: #10aad6;
+}
+
+/* @media (min-width: 600px) {
+    .css-u24ty0-MuiToolbar-root {
+        min-height: 50px !important;
+    }
+} */
+
 /* .css-mhc70k-MuiGrid-root {
     padding: 0 260px;
 } */

@@ -12,13 +12,14 @@ import Detail from "./components/Detail";
 import './style/style.css';
 import Slideshow3 from "./components/Slideshow3";
 import FullWidthGrid from "./components/info";
-import ResponsiveAppBar from "./components/NavBar";
+// import ResponsiveAppBar from "./components/NavBar";
+import NavBar1 from "./components/NavBar";
 
 function App() {
   return (
     <BrowserRouter basename="/daithuanphat"> {/* Set basename to /daithuanphat */}
       {/* <ResponsiveAppBar /> */}
-
+      <NavBar1 />
       <NavBar2 />
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
