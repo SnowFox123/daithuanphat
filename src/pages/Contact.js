@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import EmailIcon from '@mui/icons-material/Email';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PhoneIcon from '@mui/icons-material/Phone';
-import { Box, Typography, TextField, Button, Grid, InputAdornment } from '@mui/material';
+import { Box, Typography, TextField, Button, Grid } from '@mui/material';
+import axios from 'axios';
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
+
   const rootStyle = {
     padding: '0 8% 5% 8%',
   };
 
   const formContainerStyle = {
-    height: '100%', // Ensure the form container fills the full height
+    height: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -24,7 +32,23 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
+
+    axios.post('http://localhost:5000/send', formData)
+      .then(response => {
+        alert('Message sent successfully!');
+      })
+      .catch(error => {
+        alert('Failed to send message.');
+        console.error(error);
+      });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
   };
 
   return (
@@ -60,6 +84,9 @@ function Contact() {
                       variant="outlined"
                       fullWidth
                       required
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -69,6 +96,9 @@ function Contact() {
                       variant="outlined"
                       fullWidth
                       required
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -79,16 +109,11 @@ function Contact() {
                       fullWidth
                       required
                       type="email"
-                    // InputProps={{
-                    //   startAdornment: (
-                    //     <InputAdornment position="start">
-                    //       <EmailIcon />
-                    //     </InputAdornment>
-                    //   ),
-                    // }}
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                     />
                   </Grid>
-
                 </Grid>
 
                 <Grid item xs={6}>
@@ -101,6 +126,9 @@ function Contact() {
                       multiline
                       rows={6}
                       required
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -126,20 +154,19 @@ function Contact() {
                 Thông tin liên hệ
               </Box>
             </Typography>
-            <Grid item xs={12} md={12} style={{  }}>
+            <Grid item xs={12} md={12} style={{}}>
               <Box display="flex" alignItems="center" justifyContent="left">
                 <LocationOnIcon style={{ marginRight: 8 }} />
-                <p><strong>Địa chỉ</strong><br></br>22 Lý Chiêu Hoàng, Phường 10, Quận 6, TP HCM</p>
+                <p><strong>Địa chỉ</strong><br />22 Lý Chiêu Hoàng, Phường 10, Quận 6, TP HCM</p>
               </Box>
               <Box display="flex" alignItems="center" justifyContent="left">
                 <MailOutlineIcon style={{ marginRight: 8 }} />
-                <p><strong>Email</strong><br></br>Daithuanphat@gmail.com</p>
+                <p><strong>Email</strong><br />Daithuanphat@gmail.com</p>
               </Box>
               <Box display="flex" alignItems="center" justifyContent="left">
                 <PhoneIcon style={{ marginRight: 8 }} />
-                <p><strong>Điện thoại</strong><br></br>+84 (24) 8888 9999</p>
+                <p><strong>Điện thoại</strong><br />+84 (24) 8888 9999</p>
               </Box>
-
             </Grid>
           </div>
         </Grid>
