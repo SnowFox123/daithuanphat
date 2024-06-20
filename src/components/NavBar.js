@@ -55,17 +55,17 @@ function NavBar1() {
                 </div>
 
                 <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
-                    <IconButton className='icon-navbar' component="a" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" color="inherit">
+                    <IconButton style={{ padding: '0 4px' }} className='icon-navbar' component="a" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" color="inherit">
                     <img src={facebookicon} alt="Zalo" style={{ width: 30, height: 30 }} />
                     </IconButton>
-                    <IconButton className='icon-navbar' component="a" href="https://www.zalo.me" target="_blank" rel="noopener noreferrer" color="inherit">
+                    <IconButton style={{ padding: '0 4px' }} className='icon-navbar' component="a" href="https://www.zalo.me" target="_blank" rel="noopener noreferrer" color="inherit">
                         <img src={zaloicon} alt="Zalo" style={{ width: 30, height: 30 }} />
                     </IconButton>
-                    <IconButton className='icon-navbar' component="a" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" color="inherit">
+                    <IconButton style={{ padding: '0 4px' }} className='icon-navbar' component="a" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" color="inherit">
                     <img src={linkedicon} alt="Zalo" style={{ width: 30, height: 30 }} />
                     </IconButton>
-                    <IconButton className='icon-navbar' component="a" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" color="inherit">
-                    <img src={youtubeicon} alt="Zalo" style={{ width: 30, height: 30 }} />
+                    <IconButton style={{ padding: '0 4px' }} className='icon-navbar' component="a" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" color="inherit">
+                    <img src={youtubeicon} alt="Zalo" style={{ width: 30, height: 30, padding: '4px' }} />
                     </IconButton>
                 </div>
             </Toolbar>

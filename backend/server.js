@@ -25,7 +25,7 @@ app.post('/send', (req, res) => {
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: 'tranleyumi113@gmail.com',
-    subject: 'New Contact Form Submission',
+    subject: `Có khách hàng ${name} liên hệ`,
     text: `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}`
   };
 
